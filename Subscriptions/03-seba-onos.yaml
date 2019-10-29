@@ -1,0 +1,19 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: Subscription
+metadata:
+  name: seba-subscription
+  namespace: seba
+spec:
+  channel: seba/seba-helm-repo
+  name: onos
+  placement:
+    placementRef:
+      name: seba-placementrule
+      kind: PlacementRule
+      group: app.ibm.com
+  packageOverrides:
+  - packageName: onos
+    packageOverrides:
+    - path: spec.values
+      value: |
+        namespace: seba

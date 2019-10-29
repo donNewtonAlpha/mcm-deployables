@@ -1,0 +1,15 @@
+apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
+kind: ImagePolicy
+metadata:
+  name: seba-subscription
+  namespace: seba
+spec:
+  repositories:
+  - name: docker.io/*
+    policy:
+      va:
+        enabled: false
+  - name: docker.io/*
+    policy:
+      va:
+        enabled: false

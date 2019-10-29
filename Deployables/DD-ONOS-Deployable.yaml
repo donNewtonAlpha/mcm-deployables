@@ -1,0 +1,15 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: Deployable
+metadata:
+  annotations:
+    app.ibm.com/is-local-deployable: "false"
+  name: onos-channel-deploy
+  namespace: seba
+spec:
+  channel: seba/seba-helm-repo
+  name: onos
+  placement:
+    placementRef:
+      name: seba-placementrule
+      kind: PlacementRule
+      group: app.ibm.com

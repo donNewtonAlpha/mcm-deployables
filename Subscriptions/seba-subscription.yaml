@@ -1,0 +1,17 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: Subscription
+metadata:
+  name: seba-subscription
+# subscription is namespace-scoped resource, it is not set here to let user apply to `current` namespace
+  labels:
+    app: subscribed-seba-application
+spec:
+  channel: seba/seba-helm-repo
+  name: cord-platform
+  packageFilter:
+    version: "7.1.1"
+  placement:
+    placementRef:
+      name: seba-placementrule
+      kind: PlacementRule
+      group: app.ibm.com

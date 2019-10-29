@@ -1,0 +1,21 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: Deployable
+metadata:
+  annotations:
+    app.ibm.com/is-local-deployable: "false"
+  name: onoshelmdeploy
+  namespace: seba
+spec:
+  template:
+    apiVersion: helm.bitnami.com/v1
+    kind: HelmRelease
+    metadata:
+      name: onoshelm
+      namespace: seba
+    spec:
+      chartName: onos
+      repoURL: https://charts.opencord.org
+      version: 1.1.2
+  placement:
+    clusters:
+    - name: foundry-mcm

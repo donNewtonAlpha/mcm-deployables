@@ -1,0 +1,10 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: PlacementRule
+metadata:
+  name: seba-placementrule
+  namespace: seba
+spec:
+  clusterReplicas: 2
+  clusterLabels:
+    matchLabels:
+      cluster: seba

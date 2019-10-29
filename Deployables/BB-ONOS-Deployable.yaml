@@ -1,0 +1,43 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: Deployable
+metadata:
+  annotations:
+    app.ibm.com/is-local-deployable: "false"
+  name: onos-deploy
+  namespace: seba
+spec:
+  template:
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      labels:
+        app: onos
+      name: onos-deployment
+      namespace: seba
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: onos
+      template:
+        metadata:
+          labels:
+            app: onos
+        spec:
+          serviceAccountName: seba
+          containers:
+          - image: onosproject/onos:2.1.0
+            name: onos
+            securityContext:
+              runAsUser: 0
+  depencencies:
+    apiVersion: v1
+    kind: ServiceAccount
+    metadata:
+      name: seba
+      namespace: seba
+  placement:
+    placementRef:
+      name: seba-placementrule
+      kind: PlacementRule
+      group: app.ibm.com
