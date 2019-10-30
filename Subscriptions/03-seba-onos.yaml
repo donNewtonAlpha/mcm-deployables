@@ -1,7 +1,7 @@
 apiVersion: app.ibm.com/v1alpha1
 kind: Subscription
 metadata:
-  name: seba-subscription
+  name: onos-subscription
   namespace: seba
   labels:
     purpose: seba-poc
@@ -26,3 +26,7 @@ spec:
     - path: spec.values
       value: |
         fullnameOverride: "onos"
+        images:
+          onos:
+            repository: "voltha/voltha-onos"
+            tag: "2.1.0"
