@@ -2,7 +2,7 @@ apiVersion: app.ibm.com/v1alpha1
 kind: Channel
 metadata:
   name: seba-helm-repo
-  namespace: seba
+  namespace: seba-deployables
 spec:
     type: HelmRepo
     pathname: https://charts.opencord.org
@@ -13,7 +13,7 @@ apiVersion: app.ibm.com/v1alpha1
 kind: Channel
 metadata:
   name: google-incubator-repo
-  namespace: seba
+  namespace: seba-deployables
 spec:
     type: HelmRepo
     pathname: http://storage.googleapis.com/kubernetes-charts-incubator
@@ -24,7 +24,7 @@ apiVersion: app.ibm.com/v1alpha1
 kind: Channel
 metadata:
   name: local-charts-repo
-  namespace: seba
+  namespace: seba-deployables
 spec:
     type: HelmRepo
     pathname: https://icp-console.apps.dev.atl.foundry.att.com:443/helm-repo/charts
@@ -37,4 +37,4 @@ data:
 kind: ConfigMap
 metadata:
   name: skip-cert-verify
-  namespace: seba
+  namespace: seba-deployables

@@ -3,17 +3,20 @@ kind: Subscription
 metadata:
   name: etcd-operator-subscription
   namespace: seba
+  labels:
+    purpose: seba-poc
 spec:
-  channel: seba/local-charts-repo
+  channel: seba-deployables/local-charts-repo
   name: etcd-operator
+  packageFilter:
+    version: 0.8.3
   placement:
     placementRef:
       name: seba-placementrule
       kind: PlacementRule
       group: app.ibm.com
-  packageOverrides:
-  - packageName: etcd-operator
-    packageOverrides:
-    - path: spec.values
-      value: |
-        namespace: seba
+  overrides:
+    - clusterName: "/"
+      clusterOverrides:
+      - path: "metadata.namespace"
+        value: default

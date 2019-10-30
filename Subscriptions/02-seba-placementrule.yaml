@@ -8,3 +8,14 @@ spec:
   clusterLabels:
     matchLabels:
       cluster: seba
+---
+apiVersion: app.ibm.com/v1alpha1
+kind: PlacementRule
+metadata:
+  name: seba-placementrule-default
+  namespace: default
+spec:
+  clusterReplicas: 2
+  clusterLabels:
+    matchLabels:
+      cluster: seba

@@ -3,8 +3,10 @@ kind: Subscription
 metadata:
   name: voltha-subscription
   namespace: seba
+  labels:
+    purpose: seba-poc
 spec:
-  channel: seba/seba-helm-repo
+  channel: seba-deployables/seba-helm-repo
   name: voltha
   packageFilter:
     version: 1.0.6
@@ -18,4 +20,10 @@ spec:
     packageOverrides:
     - path: spec.values
       value: |
-        namespace: seba
+        global:
+          namespace: voltha
+  overrides:
+  - clusterName: "/"
+    clusterOverrides:
+    - path: "metadata.namespace"
+      value: default
