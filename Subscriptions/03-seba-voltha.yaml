@@ -15,13 +15,13 @@ spec:
       name: seba-placementrule
       kind: PlacementRule
       group: app.ibm.com
-  packageOverrides:
-  - packageName: voltha
-    packageOverrides:
-    - path: spec.values
-      value: |
-        global:
-          namespace: voltha
+ # packageOverrides:
+ # - packageName: voltha
+ #   packageOverrides:
+ #   - path: spec.values
+ #     value: |
+ #       global:
+ #         namespace: voltha
   overrides:
   - clusterName: "/"
     clusterOverrides:
