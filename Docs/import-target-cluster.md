@@ -10,7 +10,7 @@ https://www.ibm.com/support/knowledgecenter/en/SSFC4F_1.1.0/mcm/manage_cluster/i
 
 1. Login to the MCM Console on the MCM Hub server:
 
-   https://icp-console.**yourdomain**/multicloud
+   https://icp-console.yourdomain/multicloud
 
 2. From the menu in the upper-right hand corner navigate to the  **Clusters** page
 
