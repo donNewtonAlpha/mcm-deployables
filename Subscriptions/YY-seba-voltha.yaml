@@ -6,10 +6,10 @@ metadata:
   labels:
     purpose: seba-poc
 spec:
-  channel: seba-deployables/seba-helm-repo
+  channel: seba-deployables/local-charts-repo
   name: voltha
   packageFilter:
-    version: 1.0.6
+    version: 1.0.67
   placement:
     placementRef:
       name: seba-placementrule

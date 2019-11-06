@@ -1,0 +1,13 @@
+#
+# Added by John Webb
+# This ConfigMap is used by MCM when pulling HELM charts from 
+# the local repo which doesn't have a signed CA, we use this
+# to tell it to skip cert checking.
+#
+apiVersion: v1
+data:
+  insecureSkipVerify: "true"
+kind: ConfigMap
+metadata:
+  name: skip-cert-verify
+  namespace: voltha
